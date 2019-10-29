@@ -1,5 +1,5 @@
 # WGAN-QC
-PyTorch implementation of [Wasserstein GAN With Quadratic Transport Cost](http://openaccess.thecvf.com/content_ICCV_2019/html/Liu_Wasserstein_GAN_With_Quadratic_Transport_Cost_ICCV_2019_paper.html) ICCV 2019. <br>
+PyTorch implementation of [Wasserstein GAN With Quadratic Transport Cost](http://openaccess.thecvf.com/content_ICCV_2019/html/Liu_Wasserstein_GAN_With_Quadratic_Transport_Cost_ICCV_2019_paper.html),  ICCV 2019. <br>
 The code is build under Python 3.6, PyTorch 1.0
 # Usage
 DATASET: CelebA/CelebA-HQ/LSUN/ImageNet dog <br>
