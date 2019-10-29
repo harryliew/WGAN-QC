@@ -34,7 +34,7 @@ For other dataset that the pairwise data distance is small, try to add the follo
 --K 1.0
 ```
 
-For severe checkerboard artifacts, try to add the following options
+If you have severe checkerboard artifact issues, try to add the following options
 ```
 --res_ratio 1.0 --DOptIters 5
 ```
