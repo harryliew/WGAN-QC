@@ -62,7 +62,7 @@ class ResNet_G(nn.Module):
 
 
 class ResNet_D(nn.Module):
-    def __init__(self, z_dim, size, nfilter=64, nfilter_max=512):
+    def __init__(self, z_dim, size, nfilter=64, nfilter_max=512, res_ratio=0.1):
         super().__init__()
         s0 = self.s0 = 4
         nf = self.nf = nfilter
