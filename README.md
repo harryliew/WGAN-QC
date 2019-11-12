@@ -29,10 +29,11 @@ On the ImageNet dog subset, run
 python wgan_qc_resnet2.py --dataset dog --dataroot DATASET_PATH --output_dir OUTPUT_DIR --batchSize 64 --imageSize 128 --Giters 150000 --gamma 0.1 --EMA_startIter 145000 --lr_anneal 0.1 --milestones 120000,200000 --gpu_ids GPU_ID
 ```
 
-For other dataset that the pairwise data distance is small, try to add the following option
+For other dataset that the pairwise data distance is small, set 
 ```
 --K 1.0
 ```
+and increase --gamma
 
 If you have severe checkerboard artifact issues, try to add the following options
 ```
