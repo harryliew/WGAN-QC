@@ -48,7 +48,6 @@ parser.add_argument('--Giters', type=int, default=500000, help='number of Genera
 parser.add_argument('--Giter', type=int, default=0, help='starting Generator iteration (to continue training)')
 parser.add_argument('--lrD', type=float, default=1e-4, help='learning rate for D, default=1e-4')
 parser.add_argument('--lrG', type=float, default=1e-4, help='learning rate for G, default=1e-4')
-parser.add_argument('--alpha', type=float, default=0.0, help='alpha, default=0.1')
 parser.add_argument('--beta1', type=float, default=0.5, help='beta1 for adam. default=0.5')
 parser.add_argument('--beta2', type=float, default=0.999, help='beta2 for adam. default=0.999')
 parser.add_argument('--lr_anneal', type=float, default=1.0, help='learning rate decay rate, default=1.0')
@@ -92,7 +91,6 @@ epochs = int(args.epochs)
 epoch = int(args.epoch)
 Giters = int(args.Giters)
 Giter = int(args.Giter)
-alpha = args.alpha
 gamma = args.gamma
 EMA = args.EMA
 EMA_startIter = int(args.EMA_startIter)
@@ -540,9 +538,7 @@ while epoch <= epochs and Giter <= Giters:
             output_F_mean = output_fake.mean(0).view(1)
 
             L2LossD_real = criterion(output_R_mean[0], target[:batchSize].mean())
-            L2LossD_fake_1 = criterion(output_F_mean[0], target[batchSize:].mean())
-            L2LossD_fake_2 = criterion(output_fake, target[batchSize:])
-            L2LossD_fake = alpha * L2LossD_fake_1 + (1 - alpha) * L2LossD_fake_2
+            L2LossD_fake = criterion(output_fake, target[batchSize:])
             L2LossD = 0.5 * L2LossD_real + 0.5 * L2LossD_fake 
 
             if LAMBDA > 0:
